@@ -1,35 +1,49 @@
-@import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body{
 
-  font-weight: normal;
+  margin:0px;
+  padding:20px;
+ background-image: url( "data:image/svg+xml,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20320%22%20class%3D%22svgs%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFDD00%22%20fill-opacity%3D%221%22%20d%3D%22M0%2C96L60%2C133.3C120%2C171%2C240%2C245%2C360%2C250.7C480%2C256%2C600%2C192%2C720%2C149.3C840%2C107%2C960%2C85%2C1080%2C106.7C1200%2C128%2C1320%2C192%2C1380%2C224L1440%2C256L1440%2C0L1380%2C0C1320%2C0%2C1200%2C0%2C1080%2C0C960%2C0%2C840%2C0%2C720%2C0C600%2C0%2C480%2C0%2C360%2C0C240%2C0%2C120%2C0%2C60%2C0L0%2C0Z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E" );
+background-repeat: no-repeat;
+  background-size: 100%;
+}
+.logo{
+  width: 200px;
+}
+.here{
+  display: flex;
+  justify-content: center;
+  
+}
+.container{
+  background-color:rgba(152, 189, 211, 0.178);
+  width: 15em;
+  border-radius: 5px;
+}
+#logins{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+#logins :not(:last-child){
+  margin-bottom:10px;
+}
+input,button{
+  border-radius: 3px;
+  border:1px solid black;
+  height:25px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.button{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.foot{
+  /* text-align: right; */
+  position: absolute;
+  bottom:1em;
+  right: 2em;
 }
