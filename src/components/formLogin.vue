@@ -4,8 +4,9 @@ import {RouterLink,useLink} from 'vue-router'
 import 'vue-toast-notification/dist/theme-default.css';
 // import { throws } from 'assert';
 // import { isError } from 'util';
-import {useUserStore} from ''
+
 export default {
+  
     name:'postloginToAd1access',
     data(){
         return {
@@ -15,10 +16,8 @@ export default {
         }
         }
     },
-    mounted(){
-      if(this.$user.login){
-        this.$router.push({path:"/about"})  
-      }
+    onUpdated(){
+      
     },
     methods:{
          submitForm(){
@@ -33,8 +32,7 @@ export default {
            .then((res)=>{
              console.log(res);
              if(res.status==200)
-            //  this.$user={...res.data.object}
-            //  console.log( this.$user)
+              userStore.setUser(res.data.object)
               this.$router.push({path:"/about"})
              })
            .catch((res)=>{

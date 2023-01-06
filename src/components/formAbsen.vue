@@ -1,6 +1,7 @@
 <script lang="ts">
 
 export default{
+  
     name:'absen',
     data(){
         return {
@@ -9,8 +10,8 @@ export default{
                 "HourOut": ''
         }
         }
-    },mounted(){
-        console.log(this.$user)
+    },onUpdated(){
+        
     }
     ,methods:{
         absen(){
