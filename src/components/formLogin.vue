@@ -1,51 +1,7 @@
 <script>
-import axios from 'axios';
-import {RouterLink,useLink} from 'vue-router'
-import 'vue-toast-notification/dist/theme-default.css';
-// import { throws } from 'assert';
-// import { isError } from 'util';
 
-export default {
-  
-    name:'postloginToAd1access',
-    data(){
-        return {
-            form:{
-                "login":'',
-                "password": ''
-        }
-        }
-    },
-    onUpdated(){
-      
-    },
-    methods:{
-         submitForm(){
-           axios.post('http://localhost:9998/expenseModule/accounts/login/',this.form,{
-               headers: { 
-                "Access-Control-Allow-Origin": '*',
-                "Access-Control-Allow-Methods":'POST',
-                "Content-type": 'application/json;charset=UTF-8',
-                Accept:"*"
-                }
-           })
-           .then((res)=>{
-             console.log(res);
-             if(res.status==200)
-              userStore.setUser(res.data.object)
-              this.$router.push({path:"/about"})
-             })
-           .catch((res)=>{
-             console.log(res)
-               this.$toast.error('Ada kesalahan')
-           })
-           .finally()
-        }
-    },
-    mounted(){
-        
-    }
-}
+import formLogic from '../assets/js/formLogin.js'
+export default formLogic;
 </script>
 <template>
   <div class="container">

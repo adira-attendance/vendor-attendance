@@ -3,15 +3,16 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import ToastPlugin from 'vue-toast-notification';
-import {useUserStore} from './stores/session.ts'
-
 import './assets/main.css'
+import VueCookies from 'vue3-cookies'
 
 const app = createApp(App)
-
 app.use(router)
+app.use(VueCookies, {
+    expireTimes: 1800,
+    secure: true,
+});
 app.use(createPinia())
-const userStore=useUserStore()  
 app.use(ToastPlugin,{
     position:'top-right'
 })

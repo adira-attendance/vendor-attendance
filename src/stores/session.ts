@@ -1,22 +1,26 @@
-import { defineStore } from 'pinia'
+// import { defineStore } from 'pinia'
+import Vuex from 'vuex'
 
-export const useUserStore = defineStore('user',{
-    state:()=>({
-      login:'',
-      name:''
-    }),
-    actions:{
-      setUser(user){
-        this.login=user.login
-        this.name=user.name
-      },
-      printUser(){
-        console.log(this.user)
-      },
-      checkLogin(){
-        if(!this.login){
-          this.$router.push({path:"/"})
-        }
-      }
+const store={
+  state:{
+    user:{
+      login:"",
+      name:""
     }
-})
+  },
+  getters:{},
+  mutations:{
+    setUser(state,{users}){
+      state.user.login=users.login
+      state.user.name=users.name
+    }
+  },
+  actions:{
+    logins({commit},users){
+      commit('setUser',{users})
+    },getUser({state}){
+      console.log(state.user)
+    }
+  }
+}
+export default new Vuex.Store(store)

@@ -16,7 +16,7 @@ background-repeat: no-repeat;
   
 }
 .container{
-  background-color:rgba(152, 189, 211, 0.178);
+  background-color:rgb  a(152, 189, 211, 0.178);
   width: 15em;
   border-radius: 5px;
 }

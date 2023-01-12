@@ -3,10 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import home from "./views/HomeView.vue";
 import about from "./views/AboutView.vue";
 // import HelloWorld from './components/HelloWorld.vue'
-import {useUserStore} from './stores/session.ts'
-import { storeToRefs } from 'pinia'
 
-  const {saveLogin} =storeToRefs(useUserStore())
 </script>
 
 <template>
