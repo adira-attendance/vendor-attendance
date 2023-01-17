@@ -40,13 +40,14 @@ export default {
            })
            .then((res)=>{
              console.log(res.data.object);
-             if(res.status==200)
+             if(res.status==200){
               this.$cookies.set('user',res.data.object)
               this.$router.push({path:"/about"})
+             }
              })
            .catch((res)=>{
-             console.log(res)
-               this.$toast.error('Ada kesalahan Mohon hubungi IT Had')
+             console.log(res.response.data.message)
+               this.$toast.error(res.response.data.message)
            })
            .finally()
         }

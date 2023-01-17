@@ -17,8 +17,8 @@ export default {
         if (!this.$cookies.isKey("user")) {
             this.$router.push({ path: "/" });
         } else {
-            this.absen.hourOut = this.$cookies?.get('user').absenPulang ? moment(this.$cookies.get('user').absenPulang).format('DD/MMM/YYYY hh:mm:ss'): null
-            this.absen.hourIn = this.$cookies?.get('user').absenMasuk ? moment(this.$cookies.get('user').absenMasuk).format('DD/MMM/YYYY hh:mm:ss'): null
+            this.absen.hourOut = this.$cookies.get('user').absenPulang ? moment(this.$cookies.get('user').absenPulang).format('DD/MMM/YYYY hh:mm:ss'): null
+            this.absen.hourIn = this.$cookies.get('user').absenMasuk ? moment(this.$cookies.get('user').absenMasuk).format('DD/MMM/YYYY hh:mm:ss'): null
         }
     },
     methods: {
@@ -53,8 +53,7 @@ export default {
                     }
                 })
                 .catch((res) => {
-                    console.log(res)
-                    this.$toast.error('Ada kesalahan Mohon hubungi IT Had')
+                    this.$toast.error(res.response.data.message)
                 })
                 .finally()
         }
