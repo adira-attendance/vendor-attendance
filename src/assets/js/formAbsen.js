@@ -41,11 +41,6 @@ export default {
                 .then((res) => {
                     if (res.status == 200) {
                         moment.locale('id')
-                        // let dateMasuk = {...res.data.object, absenMasuk:.toLocaleString("id")}
-                        // dateMasuk = dateMasuk
-                        // datePulang = datePulang.toLocaleString("id")
-                        // console.log(res.data.object.absenMasuk.setTime(res.data.object.absenMasuk.toLocaleString()));
-                        // console.log(new Date(datePulang.replace(".",":")));
                         this.$cookies.set('user', res.data.object)
                         this.absen.hourOut = this.$cookies.get('user').absenPulang ? moment(this.$cookies.get('user').absenPulang).format('DD/MMM/YYYY hh:mm:ss'): null
                         this.absen.hourIn = this.$cookies.get('user').absenMasuk ? moment(this.$cookies.get('user').absenMasuk).format('DD/MMM/YYYY hh:mm:ss'): null
